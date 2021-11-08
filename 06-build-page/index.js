@@ -10,7 +10,7 @@ async function createHtml() {
   try {
     let templateData = await fs.readFile(templateFile, "utf-8");
 
-    const re = /{{\s*\w+\s*}}/g;
+    const re = /{{\s*[\w-]+\s*}}/g;
     const tags = templateData.match(re);
     const filenames = tags.map((el) => el.slice(2, -2).trim());
     
