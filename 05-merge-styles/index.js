@@ -32,7 +32,7 @@ async function readFile(srcFile) {
   for await (const partData of stream) {
     result.push(partData);
   }
-  return result;
+  return result.toString();
 }
 
 mergeStyles(srcDir, destDir);
